@@ -1,53 +1,32 @@
-**This project is a work in progress - please come back later to see it in all its glory!**
-
-Shinobi Charts/Grids/Essentials/Gauges Project Title (Objective-C/Xamarin/Android)
+Customizing Pie or Donut Slice labels in ShinobiCharts for Android
 =====================
-
-Description of project (include link to blog post if there is one)
+This is a demo project that demonstrates how to customize the look and feel of the slice labels of a Pie or Donut chart in ShinobiCharts for Android. There's an accompanying blog post [here](http://www.shinobicontrols.com/blog/posts/2014/05/07/shinobicharts-for-android-have-fun-with-pie-slice-labels).
 
 ![Screenshot](screenshot.png?raw=true)
+
+There's also an [iOS version of this project](https://github.com/ShinobiControls/charts-pie-chart-labels).
 
 Building the project
 ------------------
 
-In order to build this project you'll need a copy of ShinobiCharts/Grids/Essentials/Gauges. If you don't have it yet, you can download a free trial from the [ShinobiCharts/Grids/Essentials/Gauges website](link to appropriate section).
+In order to build this project you'll need a copy of ShinobiCharts for Android. If you don't have it yet, you can download a free trial from the [ShinobiCharts for Android website](http://www.shinobicontrols.com/android/).
 
-If you've used the installer to install ShinobiCharts/Grids/Essentials/Gauges, the project should just work. If you haven't, then once you've downloaded and unzipped ShinobiCharts/Grids/Essentials/Gauges, open up the project in Xcode, and drag ShinobiCharts/Grids/Essentials/Gauges.framework from the finder into Xcode's 'frameworks' group, and Xcode will sort out all the header and linker paths for you.
+* **Using Eclipse**
 
-**Delete the inappropriate sections (and alter the chart/grid name in the sample code if appropriate):**
+	If you haven't already set up ShinobiCharts as an Android library in your Eclipse workspace, there are instructions in our [quick start guide](http://www.shinobicontrols.com/android/shinobicharts/quickstartguide/import-the-library/). Once the library is in place, and you've cloned or downloaded this repo, click File > New > Other… > "Android Project from Existing Code", then point it at the root directory of your download. 
 
-If you're using the trial version you'll need to add your license key. To do so, open up ViewController.m and add the following line after the chart is initialised:
+	Once you've opened up the project, open up its Properties dialog, and in the Android section, add a library reference to your own Shinobi library.
 
-    chart.licenseKey=@"your license key";
+* **Using Android Studio**
+	
+	We don't officially support Android Studio yet, but if you really want to give it a go, have a look at [this blog post](http://www.shinobicontrols.com/blog/posts/2014/04/25/using-shinobicharts-with-android-studio-update-055/).
 
-If you're using the trial version you'll need to add your license key. To do so, open up ViewController.m and add the following line after the grid is initialised:
+If you're using the trial version you'll need to add your license key. To do so, open up AccelerometerActivity.java and add the following line after the chart has been created (replacing the placeholder with your license key):
 
-    grid.licenseKey=@"your license key";
-
-If you’re using the trial version you’ll need to add your license key. To do so, open up AppDelegate.m, import <ShinobiEssentials/ShinobiEssentials.h>, and set the license key inside application:didFinishLaunchingWithOptions: as follows:
-
-    #import <ShinobiEssentials/ShinobiEssentials.h>
-
-    @implementation AppDelegate
-
-    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-    {
-        [SEssentials setLicenseKey:@"your license key"];
-        …
-    }
-
-If you’re using the trial version you’ll need to add your license key. To do so, open up AppDelegate.m, import <ShinobiGauges/ShinobiGauges.h>, and set the license key inside application:didFinishLaunchingWithOptions: as follows:
-
-    #import <ShinobiGauges/ShinobiGauges.h>
-
-    @implementation AppDelegate
-
-    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-    {
-        [ShinobiGauges setLicenseKey:@"your license key"];
-        …
-    }
-
+    shinobiChart.setLicenseKey("your license key");
+    
+You should now be able to build the project and run it. Try it on a real device rather than an emulator, twist and turn it, and watch the graph appear!
+    
 Contributing
 ------------
 
